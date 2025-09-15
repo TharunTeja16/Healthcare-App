@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Pharma Access – Find & Reserve Medicines</title>
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="navbar">
+		<div class="container nav-content">
+			<div class="brand">Pharma Access</div>
+			<nav class="nav-links">
+				<a href="#search">Search</a>
+				<a href="#recycle">Recycle</a>
+				<a href="#about">About</a>
+				<a class="btn btn-outline" href="./admin.html">Pharmacy Login</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container hero-inner">
+				<h1>Find medicines nearby. Discover affordable generics.</h1>
+				<p class="subtitle">Search availability across local pharmacies and reserve for pickup. Log expired medicines for safe recycling.</p>
+				<div class="card search-card" id="search">
+					<label for="medicine-input" class="label">Search medicine</label>
+					<div class="search-row">
+						<input id="medicine-input" type="text" placeholder="e.g., Dolo-650 / Paracetamol 650mg" />
+						<input id="location-input" type="text" placeholder="Enter location or use current" />
+						<button class="btn btn-primary">Search</button>
+					</div>
+					<div class="suggestions">
+						<span class="pill">Paracetamol 650mg (Generic)</span>
+						<span class="pill">Acetaminophen 650mg</span>
+						<span class="pill pill-outline">Show more generics</span>
+					</div>
+				</div>
+
+				<div class="results">
+					<div class="col list">
+						<div class="section-title">Nearby pharmacies</div>
+						<ul class="pharmacy-list">
+							<li class="pharmacy-item">
+								<div>
+									<div class="pharmacy-name">Green Cross Pharmacy</div>
+									<div class="muted">0.6 km • Open until 9:30 PM</div>
+									<div class="stock">Paracetamol 650mg • <span class="in-stock">In stock</span></div>
+								</div>
+								<div class="actions">
+									<button class="btn btn-secondary">Reserve for pickup</button>
+								</div>
+							</li>
+							<li class="pharmacy-item">
+								<div>
+									<div class="pharmacy-name">City Care Chemists</div>
+									<div class="muted">1.2 km • 24x7</div>
+									<div class="stock">Dolo-650 • <span class="low-stock">Low stock</span></div>
+								</div>
+								<div class="actions">
+									<button class="btn btn-secondary">Reserve for pickup</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="col map">
+						<div class="section-title">Map</div>
+						<div class="map-placeholder">Map placeholder</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="container two-col" id="recycle">
+			<div class="col">
+				<div class="card">
+					<h2>Expired medicine return</h2>
+					<p class="muted">Log expired medicines at home for safe disposal and earn rewards.</p>
+					<form class="form-grid">
+						<label>Medicine name<input type="text" placeholder="e.g., Amoxicillin 500mg" /></label>
+						<label>Quantity<input type="number" min="1" placeholder="1" /></label>
+						<label>Expiry date<input type="month" /></label>
+						<label>Pickup preference<select><option>Drop at nearby pharmacy</option><option>Request NGO pickup</option></select></label>
+						<button class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<h2>Why recycle?</h2>
+					<ul class="benefits">
+						<li>Prevents environmental contamination</li>
+						<li>Keeps communities safe</li>
+						<li>Earn reward points for discounts</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="container" id="about">
+			<div class="card">
+				<h2>About</h2>
+				<p class="muted">This is a static prototype. Future versions will include live stock updates, reservations, authentication, and integration with generic drug databases.</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container footer-inner">
+			<div>© 2025 Pharma Access</div>
+			<div class="footer-links">
+				<a href="#">Privacy</a>
+				<a href="#">Terms</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
+
+

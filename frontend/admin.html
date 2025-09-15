@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Pharma Access – Pharmacy Admin</title>
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="navbar">
+		<div class="container nav-content">
+			<div class="brand">Pharma Access</div>
+			<nav class="nav-links">
+				<a href="./index.html">User View</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container admin">
+		<section class="card login-card">
+			<h1>Pharmacy/Admin Login</h1>
+			<div class="form-grid">
+				<label>Email<input type="email" placeholder="owner@pharmacy.com" /></label>
+				<label>Password<input type="password" placeholder="••••••••" /></label>
+				<button class="btn btn-primary">Login</button>
+			</div>
+			<p class="muted small">Demo only. Authentication will be added later.</p>
+		</section>
+
+		<section class="grid-2">
+			<div class="card">
+				<div class="section-title">Inventory</div>
+				<div class="form-inline">
+					<input type="text" placeholder="Medicine name" />
+					<input type="text" placeholder="Strength (e.g., 650mg)" />
+					<input type="number" placeholder="Stock" />
+					<input type="month" placeholder="Expiry" />
+					<button class="btn btn-secondary">Add/Update</button>
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Medicine</th>
+							<th>Strength</th>
+							<th>Stock</th>
+							<th>Expiry</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Dolo-650</td>
+							<td>650mg</td>
+							<td>18</td>
+							<td>2026-04</td>
+							<td><button class="btn btn-link danger">Remove</button></td>
+						</tr>
+						<tr>
+							<td>Paracetamol</td>
+							<td>650mg</td>
+							<td>42</td>
+							<td>2025-12</td>
+							<td><button class="btn btn-link danger">Remove</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="card">
+				<div class="section-title">Reservations</div>
+				<ul class="list-plain">
+					<li>
+						<div>
+							<div class="bold">Order #1023</div>
+							<div class="muted">Paracetamol 650mg • Qty 2 • Pickup 5:30 PM</div>
+						</div>
+						<div class="actions"><button class="btn btn-secondary">Mark Ready</button></div>
+					</li>
+					<li>
+						<div>
+							<div class="bold">Order #1024</div>
+							<div class="muted">Dolo-650 • Qty 1 • Pickup 7:00 PM</div>
+						</div>
+						<div class="actions"><button class="btn btn-secondary">Mark Ready</button></div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="card">
+			<div class="section-title">Expired returns</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Medicine</th>
+						<th>Qty</th>
+						<th>Expiry</th>
+						<th>Customer</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Amoxicillin 500mg</td>
+						<td>3</td>
+						<td>2024-11</td>
+						<td>Rahul S</td>
+						<td><span class="badge">Awaiting drop-off</span></td>
+					</tr>
+					<tr>
+						<td>Ibuprofen 400mg</td>
+						<td>1</td>
+						<td>2025-01</td>
+						<td>Anita P</td>
+						<td><span class="badge success">Recycled</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container footer-inner">
+			<div>© 2025 Pharma Access</div>
+			<div class="footer-links">
+				<a href="#">Privacy</a>
+				<a href="#">Terms</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
+
+
