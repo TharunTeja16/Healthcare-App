@@ -27,4 +27,8 @@
 		const email = emailEl?.value?.trim();
 		const password = passEl?.value || '';
 		if (!email || !password) { alert('Enter email and password'); return; }
+		try {
+			const { token, user } = await api('/api/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) });
+			setToken(token);
+			alert(`Logged in as ${user.name}`);
 }  )
