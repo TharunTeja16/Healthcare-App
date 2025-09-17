@@ -23,3 +23,8 @@
 		if (!res.ok) throw new Error(`HTTP ${res.status}`);
 		return res.json();
 	}
+	async function handleLogin() {
+		const email = emailEl?.value?.trim();
+		const password = passEl?.value || '';
+		if (!email || !password) { alert('Enter email and password'); return; }
+}  )
