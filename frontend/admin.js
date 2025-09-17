@@ -31,4 +31,9 @@
 			const { token, user } = await api('/api/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) });
 			setToken(token);
 			alert(`Logged in as ${user.name}`);
-}  )
+			await loadInventory();
+		} catch (e) {
+			alert('Login failed');
+		}
+	}
+} )();
