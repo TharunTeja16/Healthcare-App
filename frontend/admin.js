@@ -36,4 +36,6 @@
 			alert('Login failed');
 		}
 	}
+	async function loadInventory() {
+		if (!invTableBody) return;
 } )();
