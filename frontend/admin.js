@@ -45,4 +45,23 @@
 			invTableBody.innerHTML = `<tr><td colspan="5" class="muted">Failed to load inventory</td></tr>`;
 		}
 	}
+	function renderInventory(items) {
+		invTableBody.innerHTML = '';
+		if (!items.length) {
+			invTableBody.innerHTML = `<tr><td colspan="5" class="muted">No items</td></tr>`;
+			return;
+		}
+		for (const it of items) {
+			const tr = document.createElement('tr');
+			const med = it.medicineId || {};
+			tr.innerHTML = `
+				<td>${escapeHtml(med.brandName || '')}</td>
+				<td>${escapeHtml(med.strength || '')}</td>
+				<td>${Number(it.quantity ?? 0)}</td>
+				<td>${it.expiry ? escapeHtml((it.expiry || '').slice(0, 10)) : ''}</td>
+				<td><button class="btn btn-link danger" type="button" disabled>Remove</button></td>
+			`;
+			invTableBody.appendChild(tr);
+		}
+	}
 })();
