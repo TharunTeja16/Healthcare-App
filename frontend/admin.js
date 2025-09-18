@@ -36,13 +36,4 @@
 			alert('Login failed');
 		}
 	}
-	async function loadInventory() {
-		if (!invTableBody) return;
-		try {
-			const { items } = await api('/api/inventory');
-			renderInventory(items || []);
-		} catch (e) {
-			invTableBody.innerHTML = `<tr><td colspan="5" class="muted">Failed to load inventory</td></tr>`;
-		}
-	}
 })();
