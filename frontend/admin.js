@@ -23,6 +23,7 @@
 		if (!res.ok) throw new Error(`HTTP ${res.status}`);
 		return res.json();
 	}
+
 	async function handleLogin() {
 		const email = emailEl?.value?.trim();
 		const password = passEl?.value || '';
@@ -36,6 +37,7 @@
 			alert('Login failed');
 		}
 	}
+
 	async function loadInventory() {
 		if (!invTableBody) return;
 		try {
@@ -45,6 +47,7 @@
 			invTableBody.innerHTML = `<tr><td colspan="5" class="muted">Failed to load inventory</td></tr>`;
 		}
 	}
+	
 	function renderInventory(items) {
 		invTableBody.innerHTML = '';
 		if (!items.length) {
@@ -62,6 +65,25 @@
 				<td><button class="btn btn-link danger" type="button" disabled>Remove</button></td>
 			`;
 			invTableBody.appendChild(tr);
+		}
+	}
+
+	async function upsertInventory() {
+		if (!invInputs?.length) return;
+		const [nameEl, strengthEl, qtyEl, expiryEl] = invInputs;
+		const payload = {
+			brandName: nameEl.value.trim(),
+			genericName: nameEl.value.trim(),
+			strength: strengthEl.value.trim(),
+			quantity: Number(qtyEl.value || 0),
+			expiry: expiryEl.value ? `${expiryEl.value}-01` : undefined
+		};
+		if (!payload.brandName) { alert('Enter medicine name'); return; }
+		try {
+			await api('/api/inventory/upsert', { method: 'POST', body: JSON.stringify(payload) });
+			await loadInventory();
+		} catch (e) {
+			alert('Failed to update');
 		}
 	}
 })();
