@@ -47,7 +47,7 @@
 			invTableBody.innerHTML = `<tr><td colspan="5" class="muted">Failed to load inventory</td></tr>`;
 		}
 	}
-	
+
 	function renderInventory(items) {
 		invTableBody.innerHTML = '';
 		if (!items.length) {
@@ -86,4 +86,12 @@
 			alert('Failed to update');
 		}
 	}
+
+	function escapeHtml(str) { return String(str || '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+	loginBtn?.addEventListener('click', handleLogin);
+	invBtn?.addEventListener('click', upsertInventory);
+
+	// Auto-load inventory if token exists
+	if (getToken()) { loadInventory(); }
 })();
